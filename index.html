@@ -61,6 +61,11 @@
             output += 'Leírás: ' + description;
             weatherInfo.innerHTML = output;
           }
+
+          if (data.cod === '403'){
+            weatherInfo.innerHTML = 'A szerver nem tudja jelenleg teljesíteni a kérést'
+          }
+          
         })
         .catch(error => {
           console.log(error);
