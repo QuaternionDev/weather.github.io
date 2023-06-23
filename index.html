@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Időjárás</title>
+  <title>Weather</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <style>
     body {
@@ -14,19 +14,26 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="text-center mb-4">Időjárás</h1>
-
-    <div class="weather-container">
-      <div class="input-group mb-3">
-        <input type="text" id="city-input" class="form-control" placeholder="Város">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button" onclick="getWeather()">Lekérdezés</button>
-        </div>
-      </div>
-      <div id="weather-info" class="text-center"></div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Időjárás</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="changeLanguage('hu')">Magyar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="changeLanguage('en')">English</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="changeLanguage('de')">German</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="changeLanguage('hr')">Hrvatska</a>
+        </li>
+      </ul>
     </div>
-  </div>
+  </nav>
+</body>
 
   <script>
     function getWeather() {
@@ -58,6 +65,11 @@
         .catch(error => {
           console.log(error);
         });
+    }
+
+    function changeLanguage(Language){
+      var html = documents.getElementsByTagName('html')[0]
+      html.setAttribute('lang', language)
     }
   </script>
 </body>
