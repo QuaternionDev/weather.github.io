@@ -38,7 +38,7 @@
         return;
       }
 
-      var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=ee50319200e1f02ac073c3f878cf9a38'; // Helyezd be az OpenWeatherMap API kulcsodat az "API_KEY" helyére
+      var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=YOUR-API-KEY'; // Place your OpenWeatherMap API Key to 'YOUR-API-KEY'
 
       fetch(url)
         .then(response => response.json())
